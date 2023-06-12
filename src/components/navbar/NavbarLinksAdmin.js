@@ -31,7 +31,7 @@ import { AuthContext } from 'contexts/AuthContext';
 
 export default function HeaderLinks(props) {
   // Auth context function
-  const { signOut } = React.useContext(AuthContext);
+  const { user, signOut } = React.useContext(AuthContext);
   const { secondary } = props;
   const { colorMode, toggleColorMode } = useColorMode();
   // Chakra Color Mode
@@ -246,7 +246,8 @@ export default function HeaderLinks(props) {
           <Avatar
             _hover={{ cursor: 'pointer' }}
             color="white"
-            name="Adela Parkson"
+            name={user?.displayName}
+            src={user?.photoURL}
             bg="#11047A"
             size="sm"
             w="40px"
@@ -273,7 +274,7 @@ export default function HeaderLinks(props) {
               fontWeight="700"
               color={textColor}
             >
-              👋&nbsp; Hey, Adela
+              👋&nbsp; Hey, {user?.displayName}
             </Text>
           </Flex>
           <Flex flexDirection="column" p="10px">
