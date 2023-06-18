@@ -8,6 +8,7 @@ import MainDashboard from "views/admin/default";
 import Lines from "views/admin/lines";
 import Stations from "views/admin/stations";
 import TicketsTypes from "views/admin/ticketsTypes";
+import Terminals from "views/admin/terminals";
 
 // Auth Imports
 import SignInCentered from "views/auth/signIn";
@@ -41,6 +42,13 @@ const routes = [
     path: "/tickets-types",
     icon: <Icon as={MdHome} width="20px" height="20px" color="inherit" />,
     component: TicketsTypes,
+  },
+  {
+    name: "Terminals",
+    layout: "/admin",
+    path: "/terminals",
+    icon: <Icon as={MdHome} width="20px" height="20px" color="inherit" />,
+    component: Terminals,
   },
   {
     name: "Sign In",
