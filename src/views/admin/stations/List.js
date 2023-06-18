@@ -61,6 +61,16 @@ const Row = (setStations) => {
                       ))}
                     </ul>
                   );
+                } else if (cell.column.Header === "STATIONS") {
+                  data = (
+                    <ul>
+                      {cell.value.map((value) => (
+                        <li key={value.id} style={{ whiteSpace: "nowrap" }}>
+                          {value.name}
+                        </li>
+                      ))}
+                    </ul>
+                  );
                 } else if (cell.column.Header === "OPTIONS") {
                   data = (
                     <Flex
@@ -179,6 +189,10 @@ export default () => {
                 {
                   Header: "LINES",
                   accessor: "lines",
+                },
+                {
+                  Header: "STATIONS",
+                  accessor: "stations",
                 },
                 {
                   Header: "OPTIONS",
