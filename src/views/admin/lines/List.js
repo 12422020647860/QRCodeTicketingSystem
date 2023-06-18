@@ -44,11 +44,7 @@ const Row = (setLines) => {
             >
               {((row, cell) => {
                 let data = "";
-                if (
-                  cell.column.Header === "NAME" ||
-                  cell.column.Header === "NAME1" ||
-                  cell.column.Header === "NAME3"
-                ) {
+                if (cell.column.Header === "NAME") {
                   data = (
                     <Text color={textColor} fontSize="sm" fontWeight="700">
                       {cell.value}
