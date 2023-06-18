@@ -13,6 +13,7 @@ import {
 import MainDashboard from "views/admin/default";
 import Lines from "views/admin/lines";
 import Stations from "views/admin/stations";
+import TicketsTypes from "views/admin/ticketsTypes";
 import NFTMarketplace from "views/admin/marketplace";
 import Profile from "views/admin/profile";
 import DataTables from "views/admin/dataTables";
@@ -43,6 +44,13 @@ const routes = [
     path: "/stations",
     icon: <Icon as={MdHome} width="20px" height="20px" color="inherit" />,
     component: Stations,
+  },
+  {
+    name: "Tickets Types",
+    layout: "/admin",
+    path: "/tickets-types",
+    icon: <Icon as={MdHome} width="20px" height="20px" color="inherit" />,
+    component: TicketsTypes,
   },
   {
     name: "NFT Marketplace",
