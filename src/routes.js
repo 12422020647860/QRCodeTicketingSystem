@@ -9,6 +9,7 @@ import Lines from "views/admin/lines";
 import Stations from "views/admin/stations";
 import TicketsTypes from "views/admin/ticketsTypes";
 import Terminals from "views/admin/terminals";
+import Chargers from "views/admin/chargers";
 
 // Auth Imports
 import SignInCentered from "views/auth/signIn";
@@ -49,6 +50,13 @@ const routes = [
     path: "/terminals",
     icon: <Icon as={MdHome} width="20px" height="20px" color="inherit" />,
     component: Terminals,
+  },
+  {
+    name: "Chargers",
+    layout: "/admin",
+    path: "/chargers",
+    icon: <Icon as={MdHome} width="20px" height="20px" color="inherit" />,
+    component: Chargers,
   },
   {
     name: "Sign In",
