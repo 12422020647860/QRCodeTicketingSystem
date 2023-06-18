@@ -110,6 +110,7 @@ export default (props) => {
                   lineHeight="100%"
                   borderRadius="10px"
                   onClick={(e) => gotoPage(pageOption)}
+                  key={pageOption}
                 >
                   {pageOption + 1}
                 </Button>
