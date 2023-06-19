@@ -31,13 +31,8 @@ export default () => {
 
   const [loading, setLoading] = useState(false);
   const [syncing, setSyncing] = useState(false);
-  const [name, setName] = useState("");
   const [price, setPrice] = useState(0);
   const [stations, setStations] = useState(0);
-
-  const handleNameChange = (e) => {
-    setName(e.target.value);
-  };
 
   const handlePriceChange = (e) => {
     setPrice(e.target.value);
@@ -49,15 +44,14 @@ export default () => {
 
   const handleSubmitClick = (e) => {
     setSyncing(true);
-    addTicketType({ name, price, stations }).then((ticketType) => {
-      setName("");
+    addTicketType({ price, stations }).then((ticketType) => {
       setPrice(0);
       setStations(0);
       setSyncing(false);
     });
   };
 
-  const isFormReady = name && price !== "" && stations !== "";
+  const isFormReady = price !== "" && stations !== "";
 
   return (
     <Grid mb="20px" templateColumns={{ sm: 1, md: "1fr 50% 1fr" }}>
@@ -99,12 +93,10 @@ export default () => {
           </Flex>
           <Form
             formType="add"
-            name={name}
             price={price}
             stations={stations}
             syncing={syncing}
             isFormReady={isFormReady}
-            onNameChange={handleNameChange}
             onPriceChange={handlePriceChange}
             onStationsChange={handleStationsChange}
             onSubmitClick={handleSubmitClick}

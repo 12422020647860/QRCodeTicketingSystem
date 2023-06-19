@@ -37,13 +37,8 @@ export default () => {
 
   const [loading, setLoading] = useState(false);
   const [syncing, setSyncing] = useState(false);
-  const [name, setName] = useState("");
   const [price, setPrice] = useState(0);
   const [stations, setStations] = useState(0);
-
-  const handleNameChange = (e) => {
-    setName(e.target.value);
-  };
 
   const handlePriceChange = (e) => {
     setPrice(e.target.value);
@@ -55,17 +50,16 @@ export default () => {
 
   const handleSubmitClick = (e) => {
     setSyncing(true);
-    updateTicketType(id, { name, price, stations }).then((ticketType) => {
+    updateTicketType(id, { price, stations }).then((ticketType) => {
       setSyncing(false);
     });
   };
 
-  const isFormReady = name && price !== "" && stations !== "";
+  const isFormReady = price !== "" && stations !== "";
 
   useEffect(() => {
     setLoading(true);
     getTicketType(id).then((ticketType) => {
-      setName(ticketType.name);
       setPrice(ticketType.price);
       setStations(ticketType.stations);
       setLoading(false);
@@ -117,12 +111,10 @@ export default () => {
           ) : (
             <Form
               formType="edit"
-              name={name}
               price={price}
               stations={stations}
               syncing={syncing}
               isFormReady={isFormReady}
-              onNameChange={handleNameChange}
               onPriceChange={handlePriceChange}
               onStationsChange={handleStationsChange}
               onSubmitClick={handleSubmitClick}

@@ -14,19 +14,14 @@ import { NavLink } from "react-router-dom";
 
 export default ({
   formType,
-  name,
   price,
   stations,
   isFormReady,
   syncing,
-  onNameChange,
   onPriceChange,
   onStationsChange,
   onSubmitClick,
 }) => {
-  const handleNameChange = (e) => {
-    onNameChange(e);
-  };
   const handlePriceChange = (e) => {
     onPriceChange(e);
   };
@@ -38,12 +33,6 @@ export default ({
   };
   return (
     <Grid px="25px" gap={4}>
-      <GridItem>
-        <FormControl>
-          <FormLabel>Ticket Type Name</FormLabel>
-          <Input type="text" onChange={handleNameChange} value={name} />
-        </FormControl>
-      </GridItem>
       <GridItem>
         <FormControl>
           <FormLabel>Ticket Type Price</FormLabel>

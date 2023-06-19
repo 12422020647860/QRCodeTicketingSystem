@@ -20,16 +20,14 @@ export const get = (ref) =>
     ...snapshot.data(),
   }));
 
-export const add = ({ name, price, stations }) =>
+export const add = ({ price, stations }) =>
   addDoc(collection(firebaseDb, "tickets-types"), {
-    name: name,
     price: price,
     stations: stations,
   });
 
-export const update = (ref, { name, price, stations }) =>
+export const update = (ref, { price, stations }) =>
   updateDoc(doc(firebaseDb, "tickets-types", ref), {
-    name: name,
     price: price,
     stations: stations,
   });

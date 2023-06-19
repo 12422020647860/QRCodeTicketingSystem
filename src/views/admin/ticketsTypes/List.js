@@ -47,13 +47,7 @@ const Row = (setTicketsTypes) => {
             >
               {((row, cell) => {
                 let data = "";
-                if (cell.column.Header === "NAME") {
-                  data = (
-                    <Text color={textColor} fontSize="sm" fontWeight="700">
-                      {cell.value}
-                    </Text>
-                  );
-                } else if (cell.column.Header === "PRICE") {
+                if (cell.column.Header === "PRICE") {
                   data = (
                     <Text color={textColor} fontSize="sm" fontWeight="700">
                       {cell.value}
@@ -177,10 +171,6 @@ export default () => {
             <Table
               columnsData={[
                 {
-                  Header: "NAME",
-                  accessor: "name",
-                },
-                {
                   Header: "PRICE",
                   accessor: "price",
                 },
@@ -193,7 +183,18 @@ export default () => {
                   accessor: "options",
                 },
               ]}
-              tableData={ticketsTypes}
+              tableData={ticketsTypes.map((ticketType) => ({
+                ...ticketType,
+                ...(parseInt(ticketType.stations) === 0
+                  ? {
+                      stations: `${Math.max(
+                        ...ticketsTypes.map((ticketType) =>
+                          parseInt(ticketType.stations)
+                        )
+                      )}+`,
+                    }
+                  : {}),
+              }))}
               Row={Row(setTicketsTypes)}
             />
           )}
