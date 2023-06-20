@@ -1,7 +1,8 @@
 {
   "name": "horizon-ui-chakra",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "private": true,
+  "homepage": "https://12422020647860.github.io/QRCodeTicketingSystem",
   "dependencies": {
     "@chakra-ui/icons": "^1.1.5",
     "@chakra-ui/react": "1.8.8",
@@ -68,4 +69,4 @@
   "devDependencies": {
     "gh-pages": "^3.2.3"
   }
-  }
+}
