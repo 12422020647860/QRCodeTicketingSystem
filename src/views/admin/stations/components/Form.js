@@ -67,7 +67,7 @@ export default ({
       </GridItem>
       <GridItem>
         <FormControl>
-          <FormLabel>Section Lines</FormLabel>
+          <FormLabel>Station Lines</FormLabel>
           <Flex direction="column" gap={2}>
             {lines.map((line) => (
               <Flex key={line.id} gap={2} alignItems="center">
@@ -101,7 +101,7 @@ export default ({
       </GridItem>
       <GridItem>
         <FormControl>
-          <FormLabel>Sections</FormLabel>
+          <FormLabel>Linked Stations</FormLabel>
           <Flex direction="column" gap={2}>
             {stations.map((station) => (
               <Flex key={station.id} gap={2} alignItems="center">
