@@ -1,14 +1,14 @@
-import React, { useState, useContext } from 'react';
-import { Redirect, Route, Switch } from 'react-router-dom';
-import routes from 'routes.js';
+import React, { useState, useContext } from "react";
+import { Redirect, Route, Switch } from "react-router-dom";
+import routes from "routes.js";
 
 // Chakra imports
-import { Box, useColorModeValue } from '@chakra-ui/react';
+import { Box, useColorModeValue } from "@chakra-ui/react";
 
 // Layout components
-import { SidebarContext } from 'contexts/SidebarContext';
+import { SidebarContext } from "contexts/SidebarContext";
 // Contexts
-import { AuthContext } from 'contexts/AuthContext';
+import { AuthContext } from "contexts/AuthContext";
 
 // Custom Chakra theme
 export default function Auth() {
@@ -18,11 +18,11 @@ export default function Auth() {
   const [toggleSidebar, setToggleSidebar] = useState(false);
   // functions for changing the states from components
   const getRoute = () => {
-    return window.location.pathname !== '/auth/full-screen-maps';
+    return window.location.pathname !== "/auth/full-screen-maps";
   };
   const getRoutes = (routes) => {
     return routes.map((prop, key) => {
-      if (prop.layout === '/auth') {
+      if (prop.layout === "/auth") {
         return (
           <Route
             path={prop.layout + prop.path}
@@ -41,8 +41,8 @@ export default function Auth() {
       }
     });
   };
-  const authBg = useColorModeValue('white', 'navy.900');
-  document.documentElement.dir = 'ltr';
+  const authBg = useColorModeValue("white", "navy.900");
+  document.documentElement.dir = "ltr";
   // Redirect to admin dashboard if user is signed in
   if (isSignedIn) return <Redirect to="/admin" />;
   return (
