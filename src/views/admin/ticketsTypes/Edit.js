@@ -37,7 +37,7 @@ export default () => {
 
   const [loading, setLoading] = useState(false);
   const [syncing, setSyncing] = useState(false);
-  const [price, setPrice] = useState(0);
+  const [price, setPrice] = useState("");
   const [stations, setStations] = useState(0);
 
   const handlePriceChange = (e) => {
