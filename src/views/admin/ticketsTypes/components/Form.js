@@ -23,10 +23,12 @@ export default ({
   onSubmitClick,
 }) => {
   const handlePriceChange = (e) => {
-    onPriceChange(e);
+    if (e.target.value.match(/^\d*[1-9]\d*$/) || e.target.value === "")
+      onPriceChange(e);
   };
   const handleStationsChange = (e) => {
-    onStationsChange(e);
+    if (e.target.value.match(/^\d*$/) || e.target.value === "")
+      onStationsChange(e);
   };
   const handleSubmitClick = (e) => {
     onSubmitClick(e);
