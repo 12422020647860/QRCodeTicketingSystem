@@ -1,7 +1,15 @@
 import React from "react";
 
 import { Icon } from "@chakra-ui/react";
-import { MdHome, MdLock } from "react-icons/md";
+import {
+  MdHome,
+  MdLock,
+  MdMultipleStop,
+  MdOutlineSubway,
+  MdOutlineListAlt,
+  MdDoorSliding,
+  MdOutlinePayment,
+} from "react-icons/md";
 
 // Admin Imports
 import MainDashboard from "views/admin/default";
@@ -27,35 +35,45 @@ const routes = [
     name: "Lines",
     layout: "/admin",
     path: "/lines",
-    icon: <Icon as={MdHome} width="20px" height="20px" color="inherit" />,
+    icon: (
+      <Icon as={MdMultipleStop} width="20px" height="20px" color="inherit" />
+    ),
     component: Lines,
   },
   {
     name: "Stations",
     layout: "/admin",
     path: "/stations",
-    icon: <Icon as={MdHome} width="20px" height="20px" color="inherit" />,
+    icon: (
+      <Icon as={MdOutlineSubway} width="20px" height="20px" color="inherit" />
+    ),
     component: Stations,
   },
   {
     name: "Tickets Types",
     layout: "/admin",
     path: "/tickets-types",
-    icon: <Icon as={MdHome} width="20px" height="20px" color="inherit" />,
+    icon: (
+      <Icon as={MdOutlineListAlt} width="20px" height="20px" color="inherit" />
+    ),
     component: TicketsTypes,
   },
   {
     name: "Terminals",
     layout: "/admin",
     path: "/terminals",
-    icon: <Icon as={MdHome} width="20px" height="20px" color="inherit" />,
+    icon: (
+      <Icon as={MdDoorSliding} width="20px" height="20px" color="inherit" />
+    ),
     component: Terminals,
   },
   {
     name: "Chargers",
     layout: "/admin",
     path: "/chargers",
-    icon: <Icon as={MdHome} width="20px" height="20px" color="inherit" />,
+    icon: (
+      <Icon as={MdOutlinePayment} width="20px" height="20px" color="inherit" />
+    ),
     component: Chargers,
   },
   {
